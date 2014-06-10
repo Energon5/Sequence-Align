@@ -2,11 +2,6 @@ from bs4 import BeautifulSoup
 import requests
 from Bio.Emboss.Applications import NeedleCommandline
 
-
-
-
-
-
 # Test feature, see if we can pull the sequence from the site
 url = raw_input("Enter a sequence to extract from solgenomics: ")
 
@@ -24,8 +19,5 @@ soup.get_text()
 seq = soup.find("font")
 cleanseq = seq.text
 
-aseq = cleanseq
-bseq = cleanseq
-needle_cline = NeedleCommandline(asequence=aseq, bsequence=bseq, gapopen = 10, gapextend = 0.5, outfile = "needle.txt")
-stdout, stderr = needle_cline()
+print cleanseq
 
