@@ -1,0 +1,6 @@
+Work in progress
+
+Three elements currently finished. Seqextract.py allows for the extraction of a sequence from the solgenomics tomato database, emboss.py uses the
+biopython libraries in order to do pairwise alignment via emboss NEEDLE command line, and xlsxextract.py allows for the extraction of a single
+column from a csv file to get all accession numbers. xlsxextract.py will need to be incorporated with seqextract.py in order to retrieve all
+of the sequences. This may prove to be difficult, due to needing to get a small amount of text with the sequence with the accession number.
