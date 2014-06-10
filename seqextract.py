@@ -26,8 +26,3 @@ if seq.text == 'none':
 	print cleanseq
 else:
 	print cleanseq
-
-
-
-
-
