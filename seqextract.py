@@ -15,9 +15,19 @@ data = r.text
 soup = BeautifulSoup(data)
 soup.get_text()
 
-# Figured out the sequence is always at the first font tag (Possibility this might only work with old accession numbers), get that value into a string, then remove all tags with .text
+# Figured out the sequence is always at the first font tag, get that value into a string, then remove all tags with .text
 seq = soup.find("font")
 cleanseq = seq.text
 
-print cleanseq
+#This if checks to see if the value contains a sequence or not. If it doesn't, then it looks in the next available spot. The else just prints if sequence is present
+if seq.text == 'none':
+	seq = soup.findChildren("font")
+	cleanseq = seq[1].text
+	print cleanseq
+else:
+	print cleanseq
+
+
+
+
 
