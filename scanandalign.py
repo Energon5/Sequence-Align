@@ -39,13 +39,18 @@ def genscan(acc):
 io = pd.read_csv('gongcsv.csv', sep=",", usecols=(0,))
 iolist = map(list, io.values)
 
+genenames = pd.read_csv('gongcsv.csv', sep=",", usecols=(1,))
+namelist = map(list, genenames.values)
+
 
 seqb = iolist[0]
 seqbs = str(seqb).strip('[]')
+seqaname = namelist[0]
+seqanamest = str(seqaname).strip('[]')
 seqbs = seqbs.translate(None, "'")
 seqa = genscan(seqbs)
 seqbase = open("seq1.fasta", "w")
-seqbase.write(">" + seqbs)
+seqbase.write(">" + seqbs + seqanamest)
 seqbase.write(seqa)
 seqbase.close()
 
