@@ -1,5 +1,5 @@
+import pandas as pd
 def find_matches (motif1, motif2, nummotifs):
-    import pandas as pd
 
     # Initializing the file to two variables for each motif
     motif1read = pd.read_csv(motif1, sep=",", usecols=(0,))
@@ -51,8 +51,8 @@ def find_matches (motif1, motif2, nummotifs):
         average = num_lines/float(nummotifs)
         average = round(average, 4)
         avfile.write("Average for " + motif12match + " , " + str(average) + "\n")
-
-tomatch1 = raw_input("Please enter first file to match: ")
-tomatch2 = raw_input("Please enter second file: ")
-nummots = raw_input("Please enter total number of regulatory elements: ")
-find_matches(tomatch1, tomatch2, nummots)
+if __name__ == '__main__':
+    tomatch1 = raw_input("Please enter first file to match: ")
+    tomatch2 = raw_input("Please enter second file: ")
+    nummots = raw_input("Please enter total number of regulatory elements: ")
+    find_matches(tomatch1, tomatch2, nummots)
