@@ -49,8 +49,11 @@ def find_matches (motif1, motif2, nummotifs):
         motif12match = motif12match.translate(None, "'")
         num_lines = sum(1 for line in open(motif12match + ".txt"))
         average = num_lines/float(nummotifs)
+        if average == 0.0:
+            continue
         average = round(average, 4)
-        avfile.write("Average for " + motif12match + " , " + str(average) + "\n")
+        avfile.write("# of binding sites for " + motif12match + " , " + str(num_lines) + "\n")
+
 if __name__ == '__main__':
     tomatch1 = raw_input("Please enter first file to match: ")
     tomatch2 = raw_input("Please enter second file: ")

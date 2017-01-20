@@ -49,19 +49,21 @@ def genscan(acc):
 				break
 	return result
 
-
-genenames = pd.read_csv('genomic.csv', sep=",", usecols=(1,))
+file1 = raw_input("Please enter name desired for first sequence file: ")
+file2 = raw_input("Please enter name desired for second sequencefile: ")
+csvname = raw_input("Please enter name of csv file to pull sequences from: ")
+genenames = pd.read_csv(csvname + '.csv', sep=",", usecols=(1,))
 namelist = map(list, genenames.values)
 
 seqb = namelist[0]
 seqbs = str(seqb).strip('[]')
 seqbs = seqbs.translate(None, "'")
 seqa = genscan(seqbs)
-seqbase = open("seq1.fasta", "w")
+seqbase = open(file1 + ".fasta", "w")
 seqbase.write(seqa)
 seqbase.close()
 
-seqcompare = open("seq2.fasta", "wb")
+seqcompare = open(file2 + ".fasta", "wb")
 for nums in namelist:
 	if nums == "nan":
 		continue
