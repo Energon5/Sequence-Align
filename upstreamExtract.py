@@ -1,3 +1,8 @@
+# Updated 2017-06-15
+# Don't recommend using this. This queried the solgenomics website directly, identified which chromosome you were looking for, and extracted the sequence you needed.
+# This causes unnecessary strain on the host web server, and is also highly inefficient at gathering that data. 
+# Made new script in 2014 to extract these sequences from the entire genome file, recommend using that, genome.py.
+
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
