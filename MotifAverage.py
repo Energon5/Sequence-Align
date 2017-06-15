@@ -1,3 +1,7 @@
+# This script takes in two files, one with your gene sequences extracted previously, and motif sequences identified previously as well extracted form the HOMER software.
+# It then compares them, determines where the sequences matches, and outputs how many matches it finds, and the average.
+
+# Importing panda to read in CSV's natively
 import pandas as pd
 def find_matches (motif1, motif2, nummotifs, afile):
 
